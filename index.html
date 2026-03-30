@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manon Kempermann</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Manon Kempermann</a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#projects">Work</a></li>
+        <li><a href="narrative.html">Thinking</a></li>
+        <li><a href="#publications">Research</a></li>
+        <li><a href="https://manonkempermann.eu/page/cv/">CV</a></li>
+        <li><a href="mailto:manon@example.com" class="nav-cta">Get in touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="header">
+    <div class="header-content">
+      <div class="header-text">
+        <p class="header-kicker">AI Safety · Field-Building · Research</p>
+        <h1>Manon Kempermann</h1>
+        <p class="tagline">
+          I build organisations, run research programs, and study how to make AI safety
+          evaluations actually work — across languages, contexts, and real user needs.
+          Currently finishing my BSc at <a href="https://www.uni-saarland.de">Saarland University</a>,
+          researching at the <a href="https://www.i2sc.net/">Interdisciplinary Institute for Societal Computing</a>,
+          and co-directing <a href="#saige">Safe AI Germany</a>.
+          I write about <a href="narrative.html">what drives my work and where I'm headed</a>.
+        </p>
+        <div class="contact-row">
+          <a href="mailto:manon@example.com">Email</a>
+          <a href="https://www.linkedin.com/in/manon-kempermann-%F0%9F%94%B6-0a8396263/">LinkedIn</a>
+          <a href="https://manonkempermann.eu/pdf/challenges_of_evaluating_llm_safety_for_user_welfare.pdf">Latest paper</a>
+          <a href="narrative.html">Where I'm headed →</a>
+        </div>
+      </div>
+      <div class="header-photo">
+        <img src="profile.jpg" alt="Manon Kempermann" onerror="this.parentElement.innerHTML='<div class=photo-placeholder>Photo</div>'">
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="projects">
+    <hr class="section-divider">
+    <div class="section-header fade-section">
+      <span class="section-label">Building &amp; Leading</span>
+      <p class="section-intro">
+        I've spent the last two years building AI safety infrastructure in Germany — from founding
+        a university group to co-leading a national research incubator.
+      </p>
+    </div>
+
+    <div class="project-grid">
+      <a href="saige.html" class="project-card fade-section" id="saige">
+        <div class="card-top">
+          <span class="card-overline">Safe AI Germany</span>
+          <span class="card-role">Co-Director · Research Incubator Lead</span>
+        </div>
+        <h3>Scaling AI safety research and community across Germany</h3>
+        <p>
+          SAIGE runs a national research incubator pairing early-career researchers with mentors
+          on concrete AI safety projects. I design the selection process, build evaluation infrastructure,
+          and coordinate mentorship across institutions.
+        </p>
+        <div class="card-details">
+          <ul>
+            <li>Designed weighted scoring rubric with hard filters and reviewer overrides</li>
+            <li>Managing full recruitment cycle: applications → pre-selection → onboarding</li>
+            <li>Cross-institutional research mentorship at national scale</li>
+          </ul>
+        </div>
+        <span class="card-link">Read more →</span>
+      </a>
+
+      <a href="aiss.html" class="project-card fade-section">
+        <div class="card-top">
+          <span class="card-overline">AI Safety Saarland</span>
+          <span class="card-role">Founder</span>
+        </div>
+        <h3>An interdisciplinary AI safety ecosystem, built from zero</h3>
+        <p>
+          Founded AISS as a Pathfinder-supported, BERI-funded initiative for interdisciplinary
+          research, education, and exchange around AI safety at Saarland University.
+        </p>
+        <div class="card-details">
+          <ul>
+            <li>10 organisers, 35 research students, 17 projects, 6 weekly reading groups</li>
+            <li>Public kick-off: 300+ attendees, talk by Jan Kirchner (Anthropic)</li>
+            <li>Secured BERI funding; now mentoring three group leaders nationally</li>
+          </ul>
+        </div>
+        <span class="card-link">Read more →</span>
+      </a>
+
+      <a href="democracy.html" class="project-card fade-section">
+        <div class="card-top">
+          <span class="card-overline">Public Engagement</span>
+          <span class="card-role">Speaker · Researcher</span>
+        </div>
+        <h3>AI, democracy, and talking to people outside the field</h3>
+        <p>
+          Shaping AI well requires broad public understanding. I give talks in schools, churches,
+          universities, and civic organisations — reaching audiences outside the AI bubble.
+        </p>
+        <div class="card-details">
+          <ul>
+            <li>"AI and Democracy" at youmocracy e.V.</li>
+            <li>Research on LLM-based Voting Advice Applications (ACM CUI)</li>
+            <li>"AI for non-Nerds," "Coded Creation — God and AI"</li>
+          </ul>
+        </div>
+        <span class="card-link">Read more →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="publications">
+    <hr class="section-divider">
+    <div class="section-header fade-section">
+      <span class="section-label">Research</span>
+      <p class="section-intro">
+        My research focuses on LLM safety evaluation — making evaluations context-aware,
+        multilingual, and grounded in real user welfare rather than abstract benchmarks.
+      </p>
+    </div>
+
+    <div class="research-grid fade-section">
+      <a href="research-safety-eval.html" class="research-featured">
+        <span class="card-overline">Featured</span>
+        <h3>Challenges of Evaluating LLM Safety for User Welfare</h3>
+        <p>
+          Context-aware evaluation reveals safety gaps of ~1.8–2.5 points for high-vulnerability
+          users in finance and health domains. Prompt enrichment alone doesn't close these gaps.
+        </p>
+        <div class="pub-meta">
+          <strong>Manon Kempermann</strong> et al. · <span class="pub-venue">IASEAI 2026</span>
+          · <span class="pub-link-inline">arXiv 2512.10687</span>
+        </div>
+        <span class="card-link">Read about this research →</span>
+      </a>
+    </div>
+
+    <div class="fade-section">
+      <h4 class="pub-section-title">All publications</h4>
+      <ul class="pub-list">
+        <li>
+          <div class="pub-title">
+            <a href="https://manonkempermann.eu/pdf/challenges_of_evaluating_llm_safety_for_user_welfare.pdf">
+              Challenges of Evaluating LLM Safety for User Welfare</a>
+          </div>
+          <div class="pub-meta"><strong>Manon Kempermann</strong> et al. · <span class="pub-venue">IASEAI 2026</span></div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://dl.acm.org/doi/10.1145/3719160.3736611">
+              Learn, Explore and Reflect by Chatting: LLM-Based Voting Advice Application Chatbot</a>
+          </div>
+          <div class="pub-meta">Jianlong Zhu, <strong>Manon Lilott Kempermann</strong> et al. · <span class="pub-venue">ACM CUI</span></div>
+        </li>
+        <li>
+          <div class="pub-title">Multilingual Social Sycophancy in LLMs</div>
+          <div class="pub-meta"><strong>Manon Kempermann</strong> et al. · <span class="pub-venue">In preparation — ACL SRW 2026</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="thinking">
+    <hr class="section-divider">
+    <div class="fade-section">
+      <span class="section-label">Thinking</span>
+      <div class="thinking-teaser">
+        <p>
+          I write about what drives my work, what concerns me about AI development,
+          and where I think I can be most useful. It's part career narrative, part
+          working-out-loud — a living document that evolves as my thinking does.
+        </p>
+        <a href="narrative.html" class="thinking-cta">Read where I'm headed →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ORIGIN STORY -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="origin-section">
+    <hr class="section-divider">
+    <a href="ecuador.html" class="origin-card fade-section">
+      <span class="origin-kicker">Before all of this</span>
+      <h3>At 18, I built a house in the Ecuadorian Amazon and accidentally ended up leading an education project</h3>
+      <p>
+        Before I knew anything about AI, I spent a year volunteering with an organisation
+        improving education for marginalised indigenous communities in the rainforest.
+        When my boss stepped away, I found myself leading construction, launching a daughter
+        project in a remote village, and learning what it means to ship something real when
+        you have no idea what you're doing. Volunteers still work there today.
+      </p>
+      <span class="card-link">Read this story →</span>
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2026 Manon Kempermann</p>
+      <div class="footer-links">
+        <a href="https://manonkempermann.eu/page/cv/">CV</a>
+        <a href="mailto:manon@example.com">Email</a>
+          <a href="https://www.linkedin.com/in/manon-kempermann-%F0%9F%94%B6-0a8396263/">LinkedIn</a>
+        <a href="narrative.html">Career narrative</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
