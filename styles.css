@@ -564,9 +564,7 @@ nav {
    ORIGIN STORY (bottom of index)
    ═══════════════════════════════════════════ */
 .origin-section {
-  max-width: calc(var(--max-w) + var(--gutter) * 2);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
+  /* inherits all layout from .section */
 }
 
 .origin-card {
@@ -602,19 +600,51 @@ nav {
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.4;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.9rem;
   letter-spacing: -0.01em;
 }
 
-.origin-card p {
+.origin-card-inner::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.origin-card-photo {
+  float: right;
+  width: 220px;
+  height: 240px;
+  margin-left: 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+
+.origin-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.origin-card-inner p {
   font-size: 0.9rem;
   color: var(--mid);
   line-height: 1.75;
-  max-width: 600px;
 }
 
 .origin-card .card-link {
   color: var(--teal);
+}
+
+@media (max-width: 700px) {
+  .origin-card-photo {
+    float: none;
+    width: 100%;
+    height: 200px;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
 }
 
 /* ═══════════════════════════════════════════
