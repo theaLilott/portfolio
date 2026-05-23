@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Lessons from Running and Mentoring University AI Safety Groups</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Blog-specific additions */
+    .lesson-block {
+      margin-top: 2.8rem;
+      padding-top: 2.8rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .lesson-block:first-of-type {
+      margin-top: 2rem;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .lesson-number {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .lesson-block h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .prose ul.blog-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1rem 0;
+    }
+
+    .prose ul.blog-list li {
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      padding: 0.5rem 0 0.5rem 1.4rem;
+      position: relative;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .prose ul.blog-list li:last-child {
+      border-bottom: none;
+    }
+
+    .prose ul.blog-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .prose ol.blog-list {
+      list-style: none;
+      counter-reset: lesson-counter;
+      padding: 0;
+      margin: 1.2rem 0;
+    }
+
+    .prose ol.blog-list li {
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      padding: 0.8rem 0 0.8rem 2.2rem;
+      position: relative;
+      border-bottom: 1px solid var(--rule);
+      counter-increment: lesson-counter;
+    }
+
+    .prose ol.blog-list li:last-child {
+      border-bottom: none;
+    }
+
+    .prose ol.blog-list li::before {
+      content: counter(lesson-counter);
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .prose ol.blog-list li strong {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .blog-meta {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      color: var(--mid);
+      margin-top: 0.6rem;
+    }
+  </style>
+</head>
+<body>
+
+ <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Manon Kempermann</a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#projects">Work</a></li>
+        <li><a href="thinking.html">Thinking</a></li>
+        <li><a href="index.html#publications">Research</a></li>
+        <li><a href="pdf/260504_Manon_K_CV.pdf">CV</a></li>
+        <li><a href="mailto:manon@kempermann.email" class="nav-cta">Get in touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <p class="breadcrumb"><a href="index.html">Home</a> / <a href="thinking.html">Thinking</a> / Field-building lessons</p>
+    <h1>10 Lessons from Running and Mentoring University AI Safety Groups</h1>
+    <p class="blog-meta">May 2026 · 10 min read</p>
+  </div>
+
+  <div class="page-body">
+    <div class="prose">
+
+      <p>
+        At the beginning of May, I taught at an ML4Good bootcamp and gave a session on starting
+        and running AI safety initiatives. I had been meaning to write this up for a while, and
+        that session finally pushed me to do it. Over the past year I have started AI Safety
+        Saarland, helped launch Safe AI Germany, and mentored groups around the world through
+        Pathfinder and independently. These are 10 lessons — not necessarily in a specific order,
+        and not particularly polished — from my past year of field-building that have already been
+        valuable to my mentees and that I hope can be valuable for many more organisers.
+      </p>
+
+      <!-- ═══ LESSON 1 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 1</span>
+        <h3>How to start if you don't have people around you knowledgeable about AI safety</h3>
+
+        <p>
+          When I started AI Safety Saarland, my greatest blocker was that I did not know anyone
+          around who was knowledgeable about AI safety and could help me with the initiative. I put
+          out posters on campus saying "Co-founder wanted" to see if anyone would pick it up.
+          Within two weeks, I had 20 emails in my inbox from people interested in co-founding.
+          While this clearly showed interest, I realised that none of them really knew what AI
+          safety was about. I decided to nevertheless try to put a team together with some of them,
+          as not all tasks require a deep understanding of AI safety and I could try to upskill
+          them on the go. My main reasoning behind this was also that if I gave people
+          responsibility in the group while they took an intro course, it may increase their chances
+          of sticking with it because they already see how they can contribute — which closes the
+          learning-to-action gap. So I organised a crash-course teaching them the essentials of AI
+          safety in two afternoons and motivated three of them to take the AI Safety Collab course,
+          while keeping all strategic decisions on my end to ensure the group was focused on AI
+          safety and not just trustworthy AI or AI ethics.
+        </p>
+
+        <p>
+          How did it go? Well, I think reasonably well. Two of the people who took the AI Safety
+          Collab course organised the intro fellowship straight away, got into Pathfinder in the
+          Spring semester and now lead the initiative. But this strategy does not necessarily work
+          for all people and I would not say that the core team of AI Safety Saarland is as strong
+          as it could be if all organisers were deep into AI safety. To make it work, it requires a
+          lot of dedication to upskill and invest in the organisers. But even if they are the only
+          ones going into AI safety later on, this was probably worth it.
+        </p>
+
+        <p>
+          Whether to go with such a strategy or not depends heavily on your goals and ambitions for
+          the group. If you want to scale quickly and offer many different types of activities and
+          events, you will need more people to handle it all on the logistics side — and then it
+          might not matter as much how deep your volunteers are into AI safety for many tasks. If
+          you just want to create a very focused community, you will likely want a different
+          strategy. But even then, I think it is very important to ensure organisers keep upskilling
+          — they are likely the most valuable people in your community.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 2 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 2</span>
+        <h3>Know your goal for the group — and for yourself in it</h3>
+
+        <p>
+          Many parts of the strategy of your initiative depend heavily on what your goal is, and
+          from experience I think not enough people think about this clearly in the beginning or
+          make it explicit. For me, I wanted to start the dialogue on campus about AI safety, get
+          faculty and many students involved, and create a pipeline for people to enter the field.
+          For other groups I have advised, it was much more that the organisers wanted to create a
+          tight community for themselves to read and discuss topics in AI safety. Both goals and
+          everything in between are very legitimate, but it helps a lot to be clear about it
+          because how you do marketing, what you offer, and what work you as organiser are doing
+          very much depend on it.
+        </p>
+
+        <p>
+          What your goal for the group is also depends a lot on your motivation and goal as an
+          organiser. If you want to upskill yourself content-wise without much organising overhead,
+          creating a reading and discussion group in which you participate yourself might be the
+          better strategy. If you want to build pipelines and are more about getting other people
+          into the field, then you will need to work much more strategically about who you want to
+          reach, how you reach them and what you offer them. This might then look like organising
+          an intro course, where you will likely be the facilitator and might not upskill yourself
+          much in terms of content — though in terms of many other skills you will!
+        </p>
+
+        <p>
+          So I highly recommend sitting down for a moment before you start planning and writing
+          out your motivation and goal for the group. This will make it much easier to plan,
+          market and run it.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 3 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 3</span>
+        <h3>Mind yourself</h3>
+
+        <p>
+          Before I started, I had many people suggesting that I start a local initiative. I did
+          not really feel like I wanted to do it for a long time because I mostly felt that I would
+          not enjoy it much. It turned out that I was pretty wrong about it — I pivoted from
+          wanting to become a technical AI safety researcher to becoming an AI safety generalist.
+          But I think this is actually a very important point even if it sounds somewhat selfish:
+          if you start or run a field-building initiative, please don't focus only on how this
+          helps others, but also keep in mind how this helps you.
+        </p>
+
+        <p>
+          For me, starting AISS was also a (somewhat) cheap test to explore my fit for a different
+          kind of career path in AI safety, and it became something that gave me rich experience
+          and led to many more opportunities. Organising without seeing where the personal benefit
+          is for you is dangerous for your motivation and capacity. Running a local initiative gives
+          you career capital, and you will also want to move on at some point. If you are strategic
+          about what you want to test out and gain experience in while organising, it will not only
+          be much more fun for you, but might also have a much higher downstream impact. As selfish
+          as it may sound, even if AISS died tomorrow (which I very much hope it does not!) and
+          nobody there picked up AI safety, organising AISS was likely one of the counterfactually
+          best things I did for my own career and downstream impact. So please don't forget about
+          yourself — use your local initiative as a playground to run cheap tests on things you'd
+          love to organise and learn about.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 4 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 4</span>
+        <h3>Work with the interests people have at your place</h3>
+
+        <p>
+          Leveraging what people at your place are interested in can increase your reach by a lot.
+          Here are three examples from my own experience:
+        </p>
+
+        <ul class="blog-list">
+          <li>
+            Initially, I wanted to create a very interdisciplinary space to talk about AI safety at
+            my university group. It did not quite work out because the computer science department
+            is very dominant at Saarland and the other faculties were quite disconnected — both in
+            terms of physical distance and social networks. Instead of grinding too much energy on
+            making it interdisciplinary, I decided to double down on the CS people and build a very
+            technical group. Getting more CS people engaged was many times easier than getting
+            people from other faculties.
+          </li>
+          <li>
+            Similarly, I found that at the CS department there are many master's students very
+            interested in research and looking for any opportunity to contribute to a project. I
+            decided to take that motivation and turn it into a contribution to AI safety. I thought
+            these people could very likely meaningfully contribute to a technical AI safety research
+            project without yet having an understanding of AI safety. This became the Research
+            Incubator, where I connected fellows to mentors for a research project and met weekly
+            with them to go through the AGI Strategy course from BlueDot. Several of the fellows
+            picked up AI safety and continued in other AI safety research opportunities or started
+            organising too.
+          </li>
+          <li>
+            My university is connected with the CISPA Cybersecurity institute and there are
+            dedicated study programmes for cybersecurity. Over the first weeks, I found that many
+            people coming to our events or applying for our fellowships were cybersecurity students
+            interested in the intersection with AI. While I was not particularly into security
+            myself, I decided to dedicate more specific outreach to this group. We hosted a local
+            node of the def/acc hackathon organised by BlueDot and Apart in November 2025, with
+            over 40 attendees throughout the weekend. For the summer semester, I seeded and helped
+            past fellows start an AI security sub-chapter, which now has a solid team of five
+            people and is running a dedicated AI security intro course.
+          </li>
+        </ul>
+
+        <p>
+          Even though you might imagine your group in a certain way, I think it is very much worth
+          taking a step back every now and then to reflect on which specific interest groups at
+          your place you can leverage to work on some subfield of AI safety. You might not feel
+          confident enough about some of those fields — like I did about AI security — but you can
+          very likely find people in the broader community who know about it and can give you the
+          information to get started. For example, when I went to EAG SF in February, I reached
+          out to some AI security people and asked if they had a reading list that could be used
+          for the subchapter I was starting. You don't need to be an expert in everything before
+          you start an initiative on it. This brings me to the next point.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 5 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 5</span>
+        <h3>Fake it till you make it</h3>
+
+        <p>
+          When I started the group, there was a lot of work to do before we went official. For
+          example, I wanted to organise a research fellowship and had to reach out to potential
+          mentors. Why would some researcher or even professor agree to be a mentor for an
+          initiative that did not yet exist, organised by a random undergrad student? I still don't
+          know how I managed to get 14 mentors, but I think it comes down a lot to how you
+          represent yourself. If you give the impression that this is serious, that you know what
+          you are doing (even if you don't) and act professionally throughout, you can build trust.
+        </p>
+
+        <p>
+          For me it helped a lot to have the domain, website and email address for the group. I
+          never told people that I was an undergrad — I told them that I was starting a serious org
+          to bring AI safety on campus. It feels very uncomfortable to work like this, but as with
+          life in general, if you do not build confidence in yourself that you can manage this, how
+          should other people trust you?
+        </p>
+
+        <p>
+          Something else that likely helped me a lot was focusing much more on maximising success
+          and not minimising failure. Organising a local group is pretty low stakes, and even if
+          the group fails, you probably learned something for yourself. If you take that as the
+          baseline success, it can only get better. Hence, even if it feels in the beginning like
+          you are faking a lot, this is necessary to eventually make it. Small things like telling
+          people that you are organising this fellowship or putting up a professional website very
+          much boosted my confidence in the group and made it a reality.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 6 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 6</span>
+        <h3>Experiment, reflect, refine</h3>
+
+        <p>
+          I think experimentation is highly under-appreciated by many organisers starting out. Yes,
+          there are certain types of events and activities that have proven to work well for many
+          local AI safety groups around the world. But this does not mean that you always have to
+          do everything the same way. University AI safety groups are a fantastic playground to try
+          out different formats and ideas — and every university is different, so not everything
+          works equally well everywhere.
+        </p>
+
+        <p>
+          It helped me a lot to see all the activities we organised and the processes around them
+          as experiments and opportunities to find out how I can make things even better.
+        </p>
+
+        <p>
+          I'll come to marketing in more detail in the next lesson, but as an example: when you
+          are starting out, you will very likely not have much information on what marketing
+          strategies will work well at your place. Instead of trying to find this out beforehand,
+          it is much easier to try out many different strategies and evaluate on the go. For AISS'
+          kick-off, we had posters everywhere on campus, flyers on cafeteria tables, LinkedIn ads,
+          Instagram posts, repeated messages in large student WhatsApp groups, people going to
+          lectures to pitch our event, and tabling in the cafeteria with chocolate for people who
+          signed up. We had a question on the Luma sign-up asking where people heard about the
+          event. As registrations came in, we realised that chocolate and LinkedIn did not bring
+          many sign-ups, while posters, flyers and WhatsApp messages brought many more. So we
+          doubled down on those channels for future events, bringing us consistently high numbers
+          of attendees. Without the extra sign-up question, we would not have known what worked
+          best.
+        </p>
+
+        <p>
+          The same is true for event types. Just because no other group has tried a certain format,
+          it does not mean you can't do it. For example, we tried to run one social event per
+          month, but for whatever reason barely anyone came no matter how much food we offered. I
+          still don't understand why people were not interested in socials, but we went on
+          organising more talks with pizza afterwards and by doing so reached many more people. If
+          something does not work, don't be discouraged — experiments can fail, but are one more
+          datapoint you can use in future planning.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 7 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 7</span>
+        <h3>Marketing is everything</h3>
+
+        <p>
+          I can't emphasise marketing enough and yet, this is likely the most common failure mode
+          I observed when organising myself or mentoring others. If you don't tell people that you
+          are organising a certain event or have applications open for your fellowship, how should
+          they know about it? This seems very trivial, but for some reason it isn't for many
+          groups. I might dedicate a separate post to this topic in the future, but here are three
+          lessons to do marketing for your group better:
+        </p>
+
+        <ol class="blog-list">
+          <li>
+            <strong>Build a brand and keep it.</strong>
+            You want to be recognisable, so don't change your branding on every poster. To make it
+            even easier, have one to three templates for your posters and flyers that you just
+            reuse every time — no need to start from scratch for every event. It might be hard in
+            the beginning to settle on your branding, but even if you are not 100% happy with it
+            at first, consistency beats design perfection.
+          </li>
+          <li>
+            <strong>More is better.</strong>
+            Sending one message in a group chat will very likely not be enough. People read it and
+            five minutes later they have many more messages in the same or other chats and have
+            forgotten yours. Physical posters can sometimes work much better because, unlike
+            messages or social media posts, they stay visible. If you want x number of people to
+            come to your event, you will need to reach a multiple of your target attendance, since
+            not everyone who hears about an event will sign up, and not everyone who signs up will
+            come. Marketing is work, but it pays off if you do it well and becomes easier over
+            time when you have more information on which channels work best.
+          </li>
+          <li>
+            <strong>Use events to market other activities.</strong>
+            At AISS we organised a massive kick-off event (&gt;300 attendees) and used it as an
+            advertising platform for our fellowships. It is a lot easier for people to sign up for
+            a one-off event than straight to a six-week fellowship. If people came to your event,
+            they have taken a step, gained (hopefully) more trust in what you are doing, and are
+            ready to commit to something more demanding. I found this strategy to work well for
+            several groups I mentored, and it makes your activities more connected and easier to
+            manage because you only need to market one thing at a time.
+          </li>
+        </ol>
+
+        <p>
+          To stress-test whether your group is visible enough — which is sometimes easy to assume
+          when you are spending a lot of time with it — ask your seat neighbour (assuming it's not
+          your co-organiser or friend) whether they have heard about the AI safety initiative on
+          campus. If they haven't, you can do more.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 8 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 8</span>
+        <h3>Connect people to the wider AI safety community</h3>
+
+        <p>
+          I started AISS partially because I wanted to have a local community of AI safety people
+          after meeting so many amazing people at EAG(x)s, ML4Good, GCP, and elsewhere. But once
+          I created this community and people got interested in AI safety through it, they may have
+          found the local community unconsciously sufficient and weren't necessarily seeking as many
+          external connections. Similarly, for the organiser team, as long as I was there, external
+          relations were covered by me — and hence it might have seemed less necessary for other
+          organisers to grow their own networks outside the group.
+        </p>
+
+        <p>
+          For a group to have an impact or to sustain itself when you leave, you will need people
+          to connect and build a network outside your local community. I found this particularly
+          challenging because in the beginning there were not many other groups in Germany that
+          connected and coordinated together, but also because many of my co-organisers or fellows
+          needed a visa to go beyond Germany, which makes EAG(x)s challenging to attend.
+          Motivating people to take BlueDot courses to meet more people can be one step, but
+          actively connecting and introducing people can also be very helpful. National
+          coordination, especially when based in Europe, appears to work wonders and can even help
+          start many more groups. SAIGE is bringing together German AI safety group organisers for
+          weekends and since we launched, several new chapters have started. Safe AI Netherlands is
+          even more a network of local groups that now work together to streamline processes and
+          help each other out. I would be very excited to see more collaborations like those — I
+          think it often motivates organisers a lot to feel part of something bigger and to have
+          a network of support beyond their city.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 9 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 9</span>
+        <h3>Delegate</h3>
+
+        <p>
+          I knew from the beginning of AISS that I would only be able to run the group one, at
+          most two semesters. Nevertheless, in the beginning — especially because many of my
+          co-organisers did not have much AI safety background yet — I kept all decisions to
+          myself. I had a precise vision of how I wanted posters, events and processes designed.
+          But as we scaled quickly and it became clear that I would leave the city only four months
+          later, I realised that the only way to keep the group alive after I left was to radically
+          delegate to other people, even if that meant they were doing things slightly differently
+          from what I imagined.
+        </p>
+
+        <p>
+          Delegation is also a very valuable skill to learn and can empower your co-organisers a
+          lot. It is an investment in them, a sign of trust, and if you approach it that way, you
+          can still steer major decisions and their development into AI safety in the way you want.
+          Delegation can feel scary at first, but it may ultimately make your group much stronger
+          and yourself more replaceable — which is exactly what you want when you eventually move on.
+        </p>
+      </div>
+
+      <!-- ═══ LESSON 10 ═══ -->
+      <div class="lesson-block">
+        <span class="lesson-number">Lesson 10</span>
+        <h3>Be ambitious</h3>
+
+        <p>
+          With everything I wrote above, I want to encourage you to be ambitious. So many times
+          over the past year, I had doubts that I could do certain things, but then often realised
+          that the only limiting factor was my own belief that it wasn't possible. You can really
+          just do things. AI safety very much needs people who approach capacity building with an
+          agentic and ambitious mindset. There might not be time to first do a pilot and then grow
+          a little bit each semester. We need ambitious efforts now, and there are many people in
+          the community who will very likely be happy to support you if you want to start
+          something. You can make a difference.
+        </p>
+      </div>
+
+      <!-- ═══ OUTRO ═══ -->
+      <div class="aside-note" style="margin-top: 3rem;">
+        If any of this resonates, or you want to talk through your specific situation — whether
+        you're starting a group, running one, or just thinking about it — I'm happy to chat.
+        The best way to reach me is by <a href="mailto:manon@kempermann.email">email</a> or
+        <a href="https://www.linkedin.com/in/manon-kempermann-%F0%9F%94%B6-0a8396263/">LinkedIn</a>.
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2026 Manon Kempermann</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="pdf/260504_Manon_K_CV.pdf">CV</a>
+        <a href="mailto:manon@kempermann.email">Email</a>
+        <a href="https://www.linkedin.com/in/manon-kempermann-%F0%9F%94%B6-0a8396263/">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="http"], a[href^="pdf/"]').forEach(a => {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
+  </script>
+
+</body>
+</html>
