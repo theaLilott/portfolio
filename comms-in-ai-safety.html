@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Safety Is Dropping the Ball on Communications — Manon Kempermann</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .prose ul.blog-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1rem 0;
+    }
+
+    .prose ul.blog-list li {
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      padding: 0.5rem 0 0.5rem 1.4rem;
+      position: relative;
+    }
+
+    .prose ul.blog-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .prose ul.blog-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.2rem 0 0 0;
+    }
+
+    .prose ul.blog-list ul li {
+      padding: 0.25rem 0 0.25rem 1.4rem;
+    }
+
+    .prose ul.blog-list ul li::before {
+      background: transparent;
+      border: 1.5px solid var(--accent);
+    }
+
+    .prose ol.blog-list {
+      list-style: none;
+      counter-reset: idea-counter;
+      padding: 0;
+      margin: 1.2rem 0;
+    }
+
+    .prose ol.blog-list li {
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      padding: 0.8rem 0 0.8rem 2.2rem;
+      position: relative;
+      counter-increment: idea-counter;
+    }
+
+    .prose ol.blog-list li::before {
+      content: counter(idea-counter);
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .prose ol.blog-list li strong {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .blog-meta {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      color: var(--mid);
+      margin-top: 0.6rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-name">Manon Kempermann</a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#projects">Work</a></li>
+        <li><a href="thinking.html">Thinking</a></li>
+        <li><a href="index.html#publications">Research</a></li>
+        <li><a href="pdf/260719_Manon_K_CV.pdf">CV</a></li>
+        <li><a href="mailto:manon@kempermann.email" class="nav-cta">Get in touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <p class="breadcrumb"><a href="index.html">Home</a> / <a href="thinking.html">Thinking</a> / Comms in AI safety</p>
+    <h1>AI Safety Is Dropping the Ball on Communications</h1>
+    <p class="blog-meta">July 2026 · 5 min read</p>
+  </div>
+
+  <div class="page-body">
+    <div class="prose">
+
+      <div class="aside-note" style="margin-top: 2rem;">
+        <em>Note: These are some quick, unpolished takes I have about comms in AI safety after spending some time
+        thinking about this for my Generator Project. I want to post more of my thoughts online, but don't do so
+        if I aim for polished pieces, so I hope this scrappy version can still be useful to people.</em>
+      </div>
+
+      <p>I think the field of AI safety is dropping quite a ball on communications work. The problem might already be in what people think comms is about. A lot of people seem to associate comms work mostly with content on social media platforms or YouTube, or more generally with individual people communicating AI risks and safety into the world through public writing, news articles, short-form content, podcasts and YouTube videos. But this is only part of the picture. Communications is, in my opinion, much broader. In fact, I think public content on AI risks might actually not be the highest leverage work we could be doing here.</p>
+
+      <p>So what do I see as comms? When I think about communications, I like to use the very classic model of thinking about who (the transmitter) is communicating to whom (the receiver) through which channels. In the case I described before, this means the transmitter are individuals inside or adjacent to the safety community, their channel is written, audio or video content on public platforms and their main receivers are the general public and maybe potential talent we want to attract or other people inside the safety community. I do not want to say by any means that this is not good, but I think there is much more to this:</p>
+
+      <p>Besides individuals, any AI safety org likely also wants to communicate their work to different people. Every org might have different communication stakeholders, but in general the stakeholders that AI safety organisations might want to communicate to are:</p>
+
+      <ul class="blog-list">
+        <li>AI labs</li>
+        <li>The policy world as
+          <ul>
+            <li>the US government directly or specific bodies within it</li>
+            <li>policy advocacy organisations</li>
+            <li>lobbying organisations</li>
+            <li>policy research organisations</li>
+          </ul>
+        </li>
+        <li>Potential talent they might want to hire</li>
+        <li>People inside the field of AI safety, both within their own org and at other organisations</li>
+        <li>The general public</li>
+        <li>AIs maybe?</li>
+      </ul>
+
+      <p>Through this lens, communication really is much more than just informing the general public and I believe, we should be assessing and improving more strategically those channels that could be much higher leverage.</p>
+
+      <p>For example, if org A currently communicates their research mostly through friendships into the labs, having one extra FTE working on making this AI safety org &lt;-&gt; AI lab communication channel less dependent and fragile on single individuals might have a much higher impact than having another FTE producing more content that flows around on social media. Similarly, improving communication channels between technical research organisations and DC might be very high leverage, but is currently not receiving as much attention as it could.</p>
+
+      <p>Therefore, communications is really much more than one thing, and if we want to improve especially those higher-leverage channels we need additional talent pipelines than the existing short-form content fellowships like Frame or pleasedontkillus, or the Tarbell fellowship for independent journalism.</p>
+
+      <p>AI safety orgs might benefit much more from <em>communication generalists</em>: people who can serve all sorts of communication channels for the org such as improving lab relations (for example through events or workshops) while also being able to break research down into what is relevant for decision makers or the general public.</p>
+
+      <p>A few ideas I had that could improve communications in AI safety:</p>
+
+      <ol class="blog-list">
+        <li><strong>A comms generalist fellowship.</strong> We should have a comms generalist fellowship that trains people to do more than produce short-form content, focusing much more on training communications professionals who can improve the channels between AI safety orgs and the different stakeholders they have.</li>
+        <li><strong>More targeted projects to improve specific communication channels.</strong> This might look like organising more events and workshops with the specific comms stakeholder or running a programme that improves policy communication channels between the Bay and DC.</li>
+        <li><strong>Writing and communication training for AI safety researchers.</strong> Give writing and communication training to people in AI safety, so that when they have results they know how to communicate their ideas effectively to the people who should see their research. It is great to publish a paper, but putting it on arXiv only helps so much. In my view, the value of the research only appears, when it reaches who it should reach and they can take appropriate actions as a response to it.</li>
+      </ol>
+
+      <p>You might wonder, why is this not being done already. As with many issues in AI safety, I think it is much more the lack of generalist capacity to make such ideas happen than that there is a lack of interest or failed attempts. I think you could very much just try to make one of these ideas happen if you are curious about it!</p>
+
+      <!-- ═══ OUTRO ═══ -->
+      <div class="aside-note" style="margin-top: 3rem;">
+        If any of this resonates or you have feedback for me, please reach out!
+        The best way to contact me is by <a href="mailto:manon@kempermann.email">email</a> or
+        <a href="https://www.linkedin.com/in/manon-kempermann-%F0%9F%94%B6-0a8396263/">LinkedIn</a>.
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2026 Manon Kempermann</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="pdf/260719_Manon_K_CV.pdf">CV</a>
+        <a href="mailto:manon@kempermann.email">Email</a>
+        <a href="https://www.linkedin.com/in/manon-kempermann-%F0%9F%94%B6-0a8396263/">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="http"], a[href^="pdf/"]').forEach(a => {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
+  </script>
+
+</body>
+</html>
